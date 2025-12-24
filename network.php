@@ -2,13 +2,24 @@
 function network_before_render() {
 	$vars = [];
 	$vars['cdn'] = subVariable('site-vars', 'live-url') . 'assets/cdn/';
+	$allLinks = false;
 
 	if (SITENAME == 'real-estate') {
 		$vars['email'] = 'vra@aurrra.in';
 		$vars['mediakit'] = '?themecolor=00725B&heading=FEDA15';
+		$allLinks = true;
 	}
 
 	variables($vars);
+	if ($allLinks) variables([
+		'link-to-section-home' => true,
+		'link-to-node-home' => true,
+		'link-to-sub-node-home' => true,
+	]);
+}
+
+function is_page_secure() {
+	return variable('local') && !getQueryParameter('insecure');
 }
 
 function network_before_file() {
