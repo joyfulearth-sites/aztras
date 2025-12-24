@@ -1,3 +1,5 @@
 <?php
-define('SITEPATH', __DIR__ . '/real-estate');
-include_once 'amadeusweb-loader.php';
+define('SHOWSITESAT', __DIR__);
+include_once __DIR__ . '/../../dawn/spring/entry.php';
+runFrameworkFile('site/show');
+
