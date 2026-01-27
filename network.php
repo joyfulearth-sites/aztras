@@ -5,21 +5,21 @@ function network_before_render() {
 	$allLinks = false;
 
 	if (SITENAME == 'real-estate') {
-		$vars['email'] = 'vra@aurrra.in';
-		$vars['mediakit'] = '?themecolor=00725B&heading=FEDA15';
+		$vars[VAREmail] = 'vra@aurrra.in';
+		$vars[VARMediakit] = '?themecolor=00725B&heading=FEDA15';
 		$allLinks = true;
 	}
 
 	variables($vars);
 	if ($allLinks) variables([
-		'link-to-section-home' => true,
+		VARLinkToSectionHome => true,
 		'link-to-node-home' => true,
 		'link-to-sub-node-home' => true,
 	]);
 }
 
 function is_page_secure() {
-	return variable('local') && !getQueryParameter('insecure');
+	return variable(VARLocal) && !getQueryParameter('insecure');
 }
 
 function network_before_file() {
@@ -45,16 +45,18 @@ function enrichThemeVars($vars, $what) {
 }
 
 variables([
-	'email' => 'contact+' . SITENAME . '@aurrrah.com',
-	'phone'  =>  '91-91766-86867',
-	'whatsapp'  => '919176686867',
-	'phone2' =>  '+91-8148165952',
-	'whatsapp2' => '918148165952',
+	VAREmail => plus_email(VARSystemEmail, 'aurrrah'),
+	VARPhone  =>  $ph = '+91-91766-86867',
+	VARWhatsapp  => whatsapp_clean($ph),
+	VARPhone2 =>  $ph = '+91-8148165952',
+	VARWhatsapp2 => whatsapp_clean($ph),
 
 	'dont-show-current-menu' => true,
-	'link-to-site-home' => true,
+	VARLinkToSiteHome => true,
 
-	'social' => [
-		[ 'type' => 'linkedin', 'url' => 'https://www.linkedin.com/in/raveendar/', 'name' => 'Raveendar' ],
-	],
+	'live-cdn' => true, //TODO: HI: find the folder...
+
+	socialBuilder::variableName => socialBuilder::create()
+		->addLinkedIn('#todo-raveendar/', 'Raveendar')
+		->addGithubGroup()->addUtilityGroup()->getItems()
 ]);

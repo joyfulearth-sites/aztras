@@ -8,6 +8,7 @@ siteMenuName	Raveendar and Tharaghar
 scaffold	sitemap
 sections	insights
 sections_local	properties: vra+osr+auction, insights
-local-url	http://localhost/businesses/aurrrah/real-estate/
-live-url	https://aurrra.in/
+local-url	http://localhost/aurrrah/real-estate/
+live-url	https://amadeusweb.world/aurrrah/
+showIn	networks
 year	2025
