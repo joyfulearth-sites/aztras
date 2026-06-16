@@ -1,14 +1,13 @@
 #key	value
-name	VRA & Tharaghar
+name	Aztra Realtors
 byline	Building Trust, Brick by Brick
 safeName	aurrrah-real-estate
 footer-message	A conscious network for **property (real estate)** buying / selling / consulting / developing led by the seasoned team of **V Raveendar and Associates**, headquartered in Chennai, <u>Tamil Nadu</u>, India.
-iconName	VRA
-siteMenuName	Raveendar and Tharaghar
+iconName	Aztra Realtors
+siteMenuName	Real Estate
 scaffold	sitemap
-sections	insights
-sections_local	properties: vra+osr+auction, insights
-local-url	http://localhost/aurrrah/real-estate/
-live-url	https://amadeusweb.world/aurrrah/
-showIn	networks
+sections	vra, insights
+sections_local	properties: vra+osr+auction, insights, internal
+local-url	http://localhost/others/aztras/real-estate/
+live-url	https://realty.aztras.in/
 year	2025

@@ -1,6 +1,7 @@
 <?php
 function network_before_render() {
 	$vars = [];
+	//TODO: sync mechanism / beycomp training
 	$vars['cdn'] = subVariable('site-vars', 'live-url') . 'assets/cdn/';
 	$allLinks = false;
 
@@ -45,7 +46,7 @@ function enrichThemeVars($vars, $what) {
 }
 
 variables([
-	VAREmail => plus_email(VARSystemEmail, 'aurrrah'),
+	VAREmail => plus_email('raveendar1960@gmail.com', 'aztras-' . SITENAME),
 	VARPhone  =>  $ph = '+91-91766-86867',
 	VARWhatsapp  => whatsapp_clean($ph),
 	VARPhone2 =>  $ph = '+91-8148165952',
